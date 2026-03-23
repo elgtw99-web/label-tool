@@ -864,14 +864,9 @@ async function generateLabelFields(productName, netContent, ingredients) {
 內容量：${netContent}
 全成分（INCI）：${inciList}
 
-【重要】用途欄位必須從下列衛福部公告的化妝品用途分類中選擇，不可自創描述：
-膚用化粧品類：清潔用、洗面用、化粧水用、乳液用、乳霜用、面膜用、防曬用、美白用、保濕用、去角質用、收斂用
-髮用化粧品類：洗髮用、護髮用、染髮用、燙髮用、定型用、生髮用
-彩妝品類：粉底用、眼影用、口紅用、腮紅用、睫毛膏用、指甲油用
-香水類：香水用、古龍水用
-芳香除臭類：除臭用、體香用
-
-請根據品名與成分選擇最適合的用途，可組合 1-3 項，總字數 10-15 字以內，格式例如：「保濕用、美白用」或「洗髮用、護髮用」
+【重要】用途欄位必須符合衛福部《化粧品衛生安全管理法》規定，可以是功能性描述，但不得宣稱醫療效果。
+可參考以下方向：保濕、美白、防曬、清潔、去角質、收斂、滋潤、舒緩、修護、亮澤等功能描述。
+字數控制在 10 字左右，簡潔明瞭。例如：「深層保濕、舒緩修護」、「美白淡斑、保濕滋潤」、「溫和清潔、平衡油脂」
 
 僅回傳 JSON，不要 markdown，不要解釋：
 {
@@ -936,7 +931,7 @@ function renderLabel(productName, netContent, mfr, ingredients, d) {
     ${mfr.name ? `<div class="label-row"><span class="lk">製造業者名稱：</span><span class="lv">${esc(mfr.name)}</span></div>` : ''}
     ${mfr.addr ? `<div class="label-row"><span class="lk">製造業者地址：</span><span class="lv">${esc(mfr.addr)}</span></div>` : ''}
     ${mfr.tel  ? `<div class="label-row"><span class="lk">製造業者電話：</span><span class="lv">${esc(mfr.tel)}</span></div>` : ''}
-    <div class="label-footer">一般化妝品免字號備查｜<span style="color:#c44">紅色成分為衛福部限量標示</span></div>
+    <div class="label-footer">一般化妝品免字號備查</div>
   `;
 
   document.getElementById('labelSheet').innerHTML = html;
