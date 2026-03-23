@@ -796,7 +796,7 @@ async function generate() {
 
 // ── Extract ingredients from image via Claude ──
 async function extractIngredientsFromImage() {
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+  const resp = await fetch('https://labeltool.elg-tw99.workers.dev', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -862,7 +862,7 @@ async function generateLabelFields(productName, netContent, ingredients) {
   "origin": "台灣"
 }`;
 
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+  const resp = await fetch('https://labeltool.elg-tw99.workers.dev', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
